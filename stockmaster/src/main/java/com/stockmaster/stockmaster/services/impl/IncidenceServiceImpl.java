@@ -21,11 +21,9 @@ public class IncidenceServiceImpl implements IncidenceService{
     @Override
     public void storeIncidence(IncidenceDTO datos) {
         Incidence incidence = new Incidence();
-        incidence.setCategory(datos.getCategory());
         incidence.setDescription(datos.getDescription());
-        incidence.setPriority(datos.getPriority());
         incidence.setCreatedAt(LocalDateTime.now());
-
+        incidence.setPriority(datos.getPriority());
         incidenceRepository.save(incidence);
     }
  
@@ -36,7 +34,7 @@ public class IncidenceServiceImpl implements IncidenceService{
  
     @Override
     public List<IncidenceDTO> getIncidencesById(Long id) {
-        throw new UnsupportedOperationException("Unimplemented method 'getIncidencesById'");
+        return null;
     }
  
     @Override
