@@ -8,6 +8,4 @@ import com.stockmaster.stockmaster.models.Incidence;
 @Repository
 public interface IncidenceRepository extends JpaRepository<Incidence, Long>{
 
-    void save(Incidence incidence);
-
 }

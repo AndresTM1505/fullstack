@@ -25,7 +25,6 @@ import com.stockmaster.stockmaster.models.utils.Scopes;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-
 public class Incidence {
   @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
