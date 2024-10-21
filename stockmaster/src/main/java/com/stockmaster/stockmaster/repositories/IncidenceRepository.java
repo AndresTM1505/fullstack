@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.stockmaster.stockmaster.models.Incidence;
 
 @Repository
-public interface IncidenceRepository extends JpaRepository<Incidence, Long>{
-
+public interface IncidenceRepository extends JpaRepository<Incidence, Long> {
+    
 }

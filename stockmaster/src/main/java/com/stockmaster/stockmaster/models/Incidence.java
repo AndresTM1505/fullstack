@@ -17,16 +17,16 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-import com.stockmaster.stockmaster.models.utils.Priorities;
-import com.stockmaster.stockmaster.models.utils.Scopes;
+import com.stockmaster.stockmaster.models.utils.enums.Priorities;
+import com.stockmaster.stockmaster.models.utils.enums.Scopes;
  
 @Entity
 @Table(name = "incidence")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 public class Incidence {
-  @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column
@@ -46,4 +46,7 @@ public class Incidence {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User userCreated;
-      }
+   
+    }
+
+

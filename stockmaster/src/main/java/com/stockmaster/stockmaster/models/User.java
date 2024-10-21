@@ -2,7 +2,7 @@ package com.stockmaster.stockmaster.models;
 
 import java.time.LocalDateTime;
 
-import com.stockmaster.stockmaster.models.utils.Roles;
+import com.stockmaster.stockmaster.models.utils.enums.Roles;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,7 +17,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "tabla_users")
+@Table(name = "splint_user")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
