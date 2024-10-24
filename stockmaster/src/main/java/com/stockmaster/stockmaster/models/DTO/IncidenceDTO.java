@@ -8,10 +8,9 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class IncidenceDTO {
-    //crtl + alt + shift + flecha abajo
+      //crtl + alt + shift + flecha abajo
     private String description;
     private Priorities priority;
     private Scopes scope;
     private String userCreated;
-   
    }

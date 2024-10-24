@@ -18,7 +18,7 @@ public class IncidenceServiceImpl implements IncidenceService {
 
     @Autowired
     IncidenceRepository incidenceRepository;
-    
+
     @Autowired
     UserRepository userRepository;
 
@@ -30,7 +30,7 @@ public class IncidenceServiceImpl implements IncidenceService {
     @Override
     public void storeIncidence(IncidenceDTO datos) {
         Optional<User> user = userRepository.findById(Long.parseLong(datos.getUserCreated()));
-        if (user.isPresent()) {
+        if(user.isPresent()){
             Incidence incidence = new Incidence();
             incidence.setDescription(datos.getDescription());
             incidence.setCreatedAt(LocalDateTime.now());
@@ -38,8 +38,9 @@ public class IncidenceServiceImpl implements IncidenceService {
             incidence.setScope(datos.getScope());
             incidence.setUserCreated(user.get());
             incidenceRepository.save(incidence);
-        } 
+        }
     }
+
     @Override
     public void deleteIncidence(Long id) {
         throw new UnsupportedOperationException("Unimplemented method 'deleteIncidence'");
@@ -49,10 +50,4 @@ public class IncidenceServiceImpl implements IncidenceService {
     public List<Incidence> getAllIncidences() {
         return incidenceRepository.findAll();
     }
-
-    @Override
-    public List<IncidenceDTO> getIncidencesById(Long id) {
-        throw new UnsupportedOperationException("Unimplemented method 'getIncidencesById'");
-    }
-   
 }

@@ -7,6 +7,6 @@ public interface UserService {
     UserDTO getUserByEmail(String email);
     void updateUser(UserDTO user);
     void deleteUser(Long id);
-    void storeUSer();
+    void storeUser(UserDTO user);
 
 }

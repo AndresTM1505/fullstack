@@ -9,5 +9,5 @@ import com.stockmaster.stockmaster.models.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
- Optional<User> getUserByEmail(String email);
+    Optional<User> getUserByEmail(String email);
 }
