@@ -24,12 +24,14 @@ public class IncidenceServiceImpl implements IncidenceService {
 
     @Override
     public List<Incidence> getIncidencesByUserName(String username) {
-        throw new UnsupportedOperationException("Unimplemented method 'getIncidencesByUserName'");
+        User user = userRepository.getUserByEmail(username).get();
+        Optional<List<Incidence>> incidenceByUser = incidenceRepository.findByUser(user);
+        return incidenceByUser.get();
     }
 
     @Override
     public void storeIncidence(IncidenceDTO datos) {
-        Optional<User> user = userRepository.findById(Long.parseLong(datos.getUserCreated()));
+        Optional<User> user = userRepository.getUserByEmail(datos.getUserCreated());
         if(user.isPresent()){
             Incidence incidence = new Incidence();
             incidence.setDescription(datos.getDescription());
