@@ -18,11 +18,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UserDTO {
     private Long id;
+    @NotBlank(message = "Name may not be blank")
     @NotNull(message = "Se debe agregar un nombre")
     private String name;
     @Email
-    @NotNull
-    @NotBlank
+    @NotNull(message = "Se debe agregar un email")
+    @NotBlank(message = "Name may not be blank")
     @NotEmpty
     private String email;
     @StrongPassword

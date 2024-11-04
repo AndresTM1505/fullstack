@@ -16,11 +16,11 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/user")
 public class UserController {
- @Autowired
+    @Autowired
     UserService userService;
 
     @PostMapping("")
-    public ResponseEntity<Void> storeIncidence(@Valid @RequestBody UserDTO userDto) {
+    public ResponseEntity<Void> storeUser(@Valid @RequestBody UserDTO userDto) {
         try {
             userService.storeUser(userDto);
             return ResponseEntity.status(HttpStatus.OK).build();

@@ -10,8 +10,7 @@ import com.stockmaster.stockmaster.repositories.UserRepository;
 import com.stockmaster.stockmaster.services.UserService;
 
 @Service
-public class UserServiceImpl implements UserService {
-
+public class UserServiceImpl implements UserService{
     @Autowired
     UserRepository userRepository;
 
@@ -36,7 +35,5 @@ public class UserServiceImpl implements UserService {
         User userToDb = UserMapper.instance.userDTOToUserDB(userFromControl);
         userRepository.save(userToDb);
     }
-
-   
 
 }
