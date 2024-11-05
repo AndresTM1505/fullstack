@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,7 +26,7 @@ public class IncidenceController {
     @Autowired
     IncidenceService incidenceService;
 
-    @GetMapping("/user")
+    @GetMapping("/listByUser")
     public ResponseEntity<List<Incidence>> getIncidencesByUsername(@RequestParam(name = "username") String username) {
         try {
             return ResponseEntity.ok(incidenceService.getIncidencesByUserName(username));
@@ -44,5 +45,14 @@ public class IncidenceController {
         }
     }
 
+    @DeleteMapping("")
 
+    public ResponseEntity<Void> deleteIncidence(@RequestParam(name = "incidence_id") Long id) {
+        try {
+            incidenceService.deleteIncidence(id);
+            return ResponseEntity.status(HttpStatus.OK).build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+    }
 }
