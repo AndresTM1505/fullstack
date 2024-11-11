@@ -44,5 +44,4 @@ public class User {
     private LocalDateTime updatedAt;
     @Column(name = "lastConnection")
     private LocalDateTime lastConnection;
-
 }

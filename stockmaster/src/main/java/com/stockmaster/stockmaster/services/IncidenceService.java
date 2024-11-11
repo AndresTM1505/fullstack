@@ -8,7 +8,10 @@ public interface IncidenceService {
     List<Incidence> getAllIncidences();
     List<Incidence> getIncidencesByUserName(String username);
     void storeIncidence(IncidenceDTO datos);
+    void updatePartialIncidence(Long id, IncidenceDTO datos);
+    void updateAllIncidence(Incidence datos);
     void deleteIncidence(Long id);
 }
+
 
 

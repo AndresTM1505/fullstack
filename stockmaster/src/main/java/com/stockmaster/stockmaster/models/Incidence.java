@@ -1,6 +1,11 @@
 package com.stockmaster.stockmaster.models;
 
 
+import java.time.LocalDateTime;
+
+import com.stockmaster.stockmaster.models.utils.enums.Priorities;
+import com.stockmaster.stockmaster.models.utils.enums.Scopes;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -15,11 +20,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
-import com.stockmaster.stockmaster.models.utils.enums.Priorities;
-import com.stockmaster.stockmaster.models.utils.enums.Scopes;
- 
 @Entity
 @Table(name = "incidence")
 @Data
@@ -46,7 +46,7 @@ public class Incidence {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User userCreated;
-   
-    }
+
+}
 
 
